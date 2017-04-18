@@ -14,7 +14,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from barrapunto.views import pagina
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    #url(r'^update$', update, name="Carga el contenido"),
+    url(r'(.*)', pagina, name="Pagina principal"),
 ]
